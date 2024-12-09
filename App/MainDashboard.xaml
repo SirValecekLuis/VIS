@@ -1,0 +1,71 @@
+﻿<Window x:Class="VIS.App.MainDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:VIS.App"
+        mc:Ignorable="d"
+        Title="MainDashboard" Height="768" Width="1024"
+        Background="#303030">
+
+    <Grid>
+        <!-- Vycentrovaný obsah -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Přivítání -->
+            <TextBlock Text="Vítejte, " FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="40">
+                <TextBlock.Inlines>
+                    <Run Text="{Binding Name}" />
+                </TextBlock.Inlines>
+            </TextBlock>
+
+            <!-- Tlačítka -->
+            <Button Content="Přidat uživatele do DB" Width="300" Height="40" FontSize="16" FontWeight="Bold"
+                    Background="#007BFF" Foreground="White" BorderBrush="Transparent" BorderThickness="0" 
+                    Margin="0,10" Click="AddUserButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="Upravit uživatele v DB" Width="300" Height="40" FontSize="16" FontWeight="Bold"
+                    Background="#007BFF" Foreground="White" BorderBrush="Transparent" BorderThickness="0" 
+                    Margin="0,10" Click="EditUserButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="Vygenerovat report" Width="300" Height="40" FontSize="16" FontWeight="Bold"
+                    Background="#007BFF" Foreground="White" BorderBrush="Transparent" BorderThickness="0" 
+                    Margin="0,10" Click="GenerateReportButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="Vykonat vzdálenou operaci" Width="300" Height="40" FontSize="16" FontWeight="Bold"
+                    Background="#007BFF" Foreground="White" BorderBrush="Transparent" BorderThickness="0" 
+                    Margin="0,10" Click="ExecuteRemoteOperationButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

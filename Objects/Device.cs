@@ -10,11 +10,16 @@ public class Device
 
     public int MotherboardId { get; set; }
 
-    public Device(long id, string name, string loc, int mbid)
+    public Device(long id, string name, string location, int motherboardid)
     {
         Id = id;
         Name = name;
-        Location = loc;
-        MotherboardId = mbid;
+        Location = location;
+        MotherboardId = motherboardid;
+    }
+
+    public Device()
+    {
+        
     }
 }

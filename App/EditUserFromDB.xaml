@@ -1,0 +1,59 @@
+﻿<Window x:Class="VIS.App.EditUserFromDB"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="EditUserFromDB" Height="768" Width="1024" Background="#303030">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Nadpis -->
+        <TextBlock Text="Úprava uživatele v DB"
+                   FontSize="28" FontWeight="Bold" Foreground="White"
+                   HorizontalAlignment="Center" Margin="20" />
+
+        <DataGrid x:Name="UsersDataGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="False"
+                  Grid.Row="1"
+                  Margin="20"
+                  Background="White"
+                  Foreground="Black"
+                  AlternatingRowBackground="#F0F0F0"
+                  RowBackground="White"
+                  BorderBrush="Gray"
+                  BorderThickness="1"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="True"
+                  CanUserSortColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Width="50" />
+                <DataGridTextColumn Header="Jméno" Binding="{Binding Name}" Width="200" />
+                <DataGridTextColumn Header="Heslo" Binding="{Binding Password}" Width="200" />
+                <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="100" />
+                <DataGridTemplateColumn Header="Akce" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Uložit" Background="#007BFF" Foreground="White"
+                                    FontSize="12" FontWeight="Bold" Padding="5"
+                                    Click="SaveUserButton_Click">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

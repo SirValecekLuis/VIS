@@ -17,4 +17,9 @@ public class User
         Password = password;
         Role = role;
     }
+
+    public User()
+    {
+        
+    }
 }

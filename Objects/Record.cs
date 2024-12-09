@@ -36,4 +36,9 @@ public class Record
         OverallUsage = usage;
         MemoryUsage = memory;
     }
+
+    public Record()
+    {
+        
+    }
 }
